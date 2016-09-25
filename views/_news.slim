@@ -1,0 +1,18 @@
+.tile.is-parent.is-4
+  .tile.box.is-child
+    - if env["warden"].user&.admin
+        a.delete href="/news/#{n.id}/delete"
+    h4.title
+      - if n.url.empty?
+        = n.title
+      - else
+        a href=n.url =n.title
+      - if n.subtitle
+        |  
+        small.subtitle 
+          = n.subtitle
+          |  
+          
+    .content
+      p.is-justified
+        = n.text

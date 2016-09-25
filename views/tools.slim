@@ -1,0 +1,29 @@
+section.hero
+  .hero-head
+    == slim :_navbar
+  .hero-body.has-text-centered
+    h3.title
+      | Tools
+  .hero-foot
+    nav.tabs.is-toggle
+      .container
+        ul
+          li#overviewtoggle @click="toggle" :class="{'is-active': tab=='overview'}"
+            a Overview
+          li#balancespantoggle @click="toggle" :class="{'is-active': tab=='balancespan'}"
+            a BalanceSpan
+            
+section.section
+  .columns#overview v-show="tab=='overview'"
+    .column.is-4
+      .github-card data-user="guillaume-bosc" data-repo="BalanceSpan"
+    .column.is-4
+      .github-card data-user="EHadoux" data-repo="GraviticBoosters"
+      
+  .container#balancespan v-show="tab=='balancespan'"
+    p BalanceSpan
+    
+- content_for :javascript
+  script src="https://cdn.jsdelivr.net/github-cards/latest/widget.js"
+  script src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.27/vue.min.js"
+  script src="tooltabs.js"

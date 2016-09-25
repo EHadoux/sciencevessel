@@ -1,0 +1,21 @@
+section.hero
+  .hero-head
+    == slim :_navbar
+  .hero-body.has-text-centered
+    h3.title
+      | List of papers
+      - if env["warden"].authenticated?
+        |  
+        a#paperformtoggle @click="toggle" href="#"
+          small Add a paper
+            
+section.section
+  .container
+    - if env["warden"].authenticated?
+      == slim :_paperform
+    - Paper.dataset.each do |p|
+      == slim :_paper, locals: {p: p}
+
+- content_for :javascript
+    script src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.27/vue.min.js"
+    script src="paperform.js"

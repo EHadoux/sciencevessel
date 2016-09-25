@@ -1,0 +1,19 @@
+nav.nav
+  .container
+    .nav-left
+      a.nav-item.is-brand href=url("/") The Science Vessel
+      a.nav-item href=url("/papers") Papers
+      a.nav-item href=url("/tools") Tools
+    .nav-right
+      - if env["warden"].authenticated?
+       span.nav-item
+         a.is-dark.is-outlined.button href=url("/auth/signout")
+           | Sign-out
+           span.icon
+             i.fa.fa-sign-out
+      - else
+        span.nav-item
+          a.is-dark.is-outlined.button href=url("/auth/github")
+            | Sign-in with Github to interact
+            span.icon
+              i.fa.fa-github

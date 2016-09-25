@@ -1,0 +1,17 @@
+.box
+  h4.title.is-5
+    - if env["warden"].user&.own?(p)
+      a.delete href="/paper/#{p.id}/delete"
+    a href="#{p.url}" 
+      = p.title
+    |  
+    span.title.is-6
+      = p.book
+      |  
+      = p.year
+      - p.tags.split(',').each do |t|
+        |  
+        span.tag.is-dark = t
+  p.subtitle.is-6 = p.authors
+  
+    

@@ -1,0 +1,10 @@
+source "https://rubygems.org"
+
+gem "sinatra"
+gem "slim"
+gem "puma"
+gem "sinatra-contrib"
+gem "sequel"
+gem "sqlite3"
+gem "omniauth-github"
+gem "warden"

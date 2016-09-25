@@ -1,0 +1,25 @@
+section.hero
+  .hero-head
+    == slim :_navbar
+  .hero-body.has-text-centered
+    h1.title The Science Vessel
+    h2.subtitle The central platform for all the esport related research.
+
+section.section
+  .container
+    .tile.is-ancestor
+      .tile.is-parent.is-4
+        .tile.box.is-child
+          h4.title Abstract
+          p.is-justified
+            | This platform is about gathering everything science has produced about esport: papers, resources, tools, etc. You can also find news about incoming deadlines and conferences, competitions and other 
+            strong very 
+            | interesting information.
+          p.is-justified Of course, we need you to feed the platform and make it grow to a reference.
+          <br/>
+          h1.title.is-5 GLHF
+          .subtitle.is-6 Every gamer ever
+      - if env["warden"].user&.admin        
+        == slim :_newsform
+      - New.dataset.each do |n|
+        == slim :_news, locals: {n: n}

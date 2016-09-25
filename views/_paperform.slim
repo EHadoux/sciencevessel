@@ -1,0 +1,17 @@
+.box#paperform v-show="shown"
+  form action="/paper" method="post"
+    p.control
+      input.input type="text" name="title" placeholder="Title of the paper" required="true"
+    p.control
+      input.input type="text" name="authors" placeholder="Authors" required="true"
+    p.control
+      input.input type="text" name="url" placeholder="URL of the paper" required="true"
+    div.control.is-horizontal.is-grouped
+      p.control
+        input.input type="text" name="book" placeholder="Conference, etc." required="true"
+      p.control.is-expanded
+        input.input type="text" name="year" placeholder="Year" required="true"
+      p.control
+        input.input type="text" name="tags" placeholder="Tags" required="true"
+      p.control.is-expanded
+        input.button.is-primary type="submit" value="Add paper"
