@@ -12,16 +12,22 @@ section.hero
             a Overview
           li#balancespantoggle @click="toggle" :class="{'is-active': tab=='balancespan'}"
             a BalanceSpan
+          li#sc2-p-idtoggle @click="toggle" :class="{'is-active': tab=='sc2-p-id'}"
+            a SC2 Player Id
             
 section.section
-  .columns#overview v-show="tab=='overview'"
-    .column.is-4
+  .columns.is-multiline#overview v-show="tab=='overview'"
+    .column
       .github-card data-user="guillaume-bosc" data-repo="BalanceSpan"
-    .column.is-4
+    .column
       .github-card data-user="EHadoux" data-repo="GraviticBoosters"
+    .column
+      .github-card data-user="mehdi-kaytoue" data-repo="sc2-player-identification"
       
   .container#balancespan v-show="tab=='balancespan'"
-    p BalanceSpan
+    p Soon
+  .container#sc2-p-id v-show="tab=='sc2-p-id'"
+    p Soon
     
 - content_for :javascript
   script src="https://cdn.jsdelivr.net/github-cards/latest/widget.js"

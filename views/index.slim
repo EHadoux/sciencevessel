@@ -7,18 +7,19 @@ section.hero
 
 section.section
   .container
-    .tile.is-ancestor
-      .tile.is-parent.is-4
-        .tile.box.is-child
-          h4.title Abstract
-          p.is-justified
-            | This platform is about gathering everything science has produced about esport: papers, resources, tools, etc. You can also find news about incoming deadlines and conferences, competitions and other 
-            strong very 
-            | interesting information.
-          p.is-justified Of course, we need you to feed the platform and make it grow to a reference.
-          <br/>
-          h1.title.is-5 GLHF
-          .subtitle.is-6 Every gamer ever
+    .columns
+      .column.is-4
+        article.message
+          .message-body
+            h4.title Abstract
+            p.is-justified
+              | This platform is about gathering everything science has produced about esport: papers, resources, tools, etc. You can also find news about incoming deadlines and conferences, competitions and other 
+              strong very 
+              | interesting information.
+            p.is-justified Of course, we need you to feed the platform and make it grow to a reference.
+            <br/>
+            h1.title.is-5 GLHF
+            .subtitle.is-6 &ndash; Every gamer ever
       - if env["warden"].user&.admin        
         == slim :_newsform
       - New.dataset.each do |n|

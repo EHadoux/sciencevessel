@@ -15,6 +15,13 @@ new Vue({
   }
 })
 
+new Vue({
+  el: '#sc2-p-idtoggle',
+  data: data,
+  methods: {
+    toggle: function(event) {this.tab = 'sc2-p-id'}
+  }
+})
 
 new Vue({
   el: '#overview',
@@ -23,5 +30,10 @@ new Vue({
 
 new Vue({
   el: '#balancespan',
+  data: data
+})
+
+new Vue({
+  el: '#sc2-p-id',
   data: data
 })
